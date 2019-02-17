@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+	<head>
+
+		<meta charset="UTF-8">
+		<title>Home</title>
+		<link rel="stylesheet" type="text/css" href="css/styles.css">
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+		<link href="https://fonts.googleapis.com/css?family=Saira+Semi+Condensed" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+	</head>
+
+	<body>
+
+		<div class="nav">
+			<a href="index.html">Home</a>
+			<a href="portfolio.html">Portfolio</a>
+			<a href="contact.html">Contact</a>
+		</div>
+
+		<div class="purple">
+			<div class="fade1"><img src="img/hello2.png" alt="hello"></div>
+
+			<h4 class="fade2">My name is Austin Schlegel.</h4>
+		</div>
+
+		<div class="white">
+			<img src="img/profile_pic.jpg" alt="austin schlegel" class="fade">
+
+			<hr class="fade">
+
+			<p class="fade">I live in Orlando, FL. Currently studying Digital Media at the University of Central Florida. I specialize in Front End Design/Development, UX/UI, and Graphic Design. I love the excitement and challenges that come with designing content for the web. Love to keep things simple and colorful.</p>
+		</div>
+
+		<div class="purple2">
+				<img src="img/paint.png" alt="paint" >
+				<img src="img/web-design.png" alt="web" >
+				<img src="img/light-bulb.png" alt="light" >
+
+				<form action="portfolio.html">
+				    <input type="submit" value="View My Portfolio">
+				</form>
+		</div>
+
+		<div class="white2">
+			<h3>Lets Get to Work.</h3>
+
+			<form action="contact.html">
+				<input type="submit" value="Contact Me">
+			</form>
+		</div>
+
+<!-- Footer includes images that open up to respective social media pages in new tab -->
+
+		<div class="footer">
+			<a href="https://www.facebook.com/austin.schlegel.39" target="_blank"><img src="img/fb.png" alt="facebook"></a>
+
+			<a href="https://www.instagram.com/schlegel_/?hl=en" target="_blank"><img src="img/insta.png" alt="instagram"></a>
+
+			<a href="https://www.linkedin.com/in/austin-schlegel-814576144/" target="_blank"><img src="img/linkedin.png" alt="linkedin"></a>
+
+			<p>Updated: 11/5/2017</p>
+		</div>
+
+
+		<script>
+
+		  $(function(){
+
+		  	$('.fade1').fadeIn(1000);
+		  	$('.fade2').delay(1000).fadeIn(1000);
+
+		  	$(window).scroll(function() {
+			    var windowBottom = $(this).scrollTop() + $(this).innerHeight();
+			    $(".fade").each(function() {
+			      /* Check the location of each desired element */
+			      var objectBottom = $(this).offset().top + $(this).outerHeight();
+			      
+			      /* If the element is completely within bounds of the window, fade it in */
+			      if (objectBottom < windowBottom) { //object comes into view (scrolling down)
+			        if ($(this).css("opacity")==0) {$(this).fadeTo(500,1);}
+			      } else { //object goes out of view (scrolling up)
+			        if ($(this).css("opacity")==1) {$(this).fadeTo(500,0);}
+			      }
+			    });
+			  }).scroll();
+		  });
+
+		</script>
+
+		
+	</body>
+
+</html>
